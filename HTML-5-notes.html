@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<meta name="keywords" content="Palavras, Chaves, Separadas, Por, Vírgula, para, motores, de, busca, externa">
+<meta name="description" content="Texto para ser localizado em motores de busca.">
+<link rel="shortcut icon" type="image/x0icon" href="html-5.png"><!-- Iconezinho do site(favicon) -->
+
+<head>
+	<meta charset ="utf-8">
+	<title>Anotacoes</title>
+	<style> /*Antes  type="text/css" era colocado dentro de <style>*/
+		h1
+		{
+			font-family: Arial;
+			text-shadow: 2px 2px 2px black;
+		}
+
+		li[id]
+		{
+			font-size: medium;
+
+		}
+		li[id=a],li[id=b],li[id=c]
+		{
+			font-size:small;
+		}
+		li:first-child
+		{
+			color:blue;
+		}
+		li:nth-child(3)
+		{
+			color:green;
+		}
+		.primeira
+		{
+			color:blue;
+			text-align:center;
+		}
+
+	</style>
+</head>
+ 
+<body><!-- COMENTARIO -->
+	<header><!-- O elemento(tag) header representa um cabecalho da página ou de um artigo-->
+		<p><h1>Anotações</h1></p>
+	</header>
+	<h4>
+		<nav>
+			<ul>
+				<li>Para lista de Elementos do HTML clique <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5/HTML5_element_list" target="_blank">AQUI</a>.</li>
+				<li>Site de aulas da W3S clique <a href="http://www.w3schools.com/" target="_blank">AQUI</a>.</li>
+				<li>Canal no Youtube para WEBDesign <a href="https://www.youtube.com/user/canalwpmasters/playlists" target="_blank">AQUI</a>.</li>
+				<li>Playlists de desenvolvimento do Guanabara <a href="https://www.youtube.com/c/cursoemvideo/playlists" target="_blank">AQUI</a>.</li>
+				<li>Site para conseguir ícones <a href="https://icomoon.io/" target="_blank">AQUI</a>.</li>
+				<li>Site sobre MICRODADOS:<a href="https://support.google.com/merchants/answer/6069143?hl=pt-BR" target="_blank">AQUI</a>. Ou procure por MICRODADOS no google.</li>
+				<li>Curso de Javascript básico:<a href="http://www.javascript-tutorial.com.br/" target="_blank">AQUI</a>.</li>
+		</p>
+			</ul>
+		</nav>
+	</h4>
+	<br>
+		<section>
+			<article>
+				<header>
+					<h2>Tags:</h2>
+				</header>
+			
+					<ul>
+						<li id="primeiro">< p >: Trata-se de um paragrafo. Deve ser fechado.</li>
+						<li id="segundo">< wbr >: Permite a quebra de texto no ponto onde é colocado.</li>
+						<li> id="segundo"> & shy: Permite a quebra de texto no ponto onde é colocado incluindo automaticamente um "-".</li>
+						<!-- O Elemento HTML de Navegacao (<nav>) representa uma seção de uma pagina que aponta para outras paginas ou para outras areas da página, ou seja, uma seção com links de navegação). -->
+						<li id="a">< nav >: Secao com links para outros sites ou paginacao(Bloco de links, rodape, menu). Da pra fazer listas de links e talz... Deve ser fechado.</li>
+						<li id="b">< section >: Uma sessão de conteúdos.</li>
+						<li id="c">< article >: Um bloco de conteúdo.</li>
+						<li id="d">< aside >: Bara lateral/Sidebar. Deve ser fechado.</li>
+						<li id="e">< footer >: E o rodape. O elemento final antes de feixar o HTML e pode conter um < nav >(não recomendado), logomarca... Deve ser fechado.</li>
+						<li id="f">< a >: Serve para fazer links. Deve ser fechado.</li>
+						<li id="g">< abbr >: Serve para colocar siglas e explicar o significado delas. Deve ser fechado.</li>
+						<li id="h">< address >: Serve para colocar colocar endereço dentro. Deve ser fechado.</li>
+						<li id="i"><blockquote>< blockquote > Tag que define citacoes LONGAS(trechos, textos). Deve ser fechado.</blockquote></li>
+						<li id="j"><cite>< cite > Tag que define citacoes CURTAS(referencia). Deve ser fechado.</cite></li>
+						<li id="l">< code > tag que define citacoes de CÓDIGOS. Deve ser fechado.</li>
+						<li id="m">< div > e < span >: Definem estrutura de elementos. Podem trabalhar junto com o CSS. div e elemento de bloco e span é elemento de linha. Deve ser fechado.</li>
+						<li id="n">< STRONG > Negrito. Deve ser fechado.</li>
+						<li id="o">< EM > hitalico. Deve ser fechado.</li>
+						<li id="p">< ol >: Lista nao ordenada(um monte de sombolos iguals, tipo "*" ou "-"). Suas opções são criadas com varios < li > em seu interior. Deve ser fechado.</li>
+						<li id="q">< ul >: Lista ordenada(Usa numero ou letras para ordenar). Suas opções são criadas com varios < li > em seu interior. Deve ser fechado.</li>
+						<br><!-- incrementar parte do DIV depois -->
+						<li class="primeira">A tag DIV serve para agrupar um conteudo, organizar ele, fazer um cabecalho, menu e organizar este conteudo da forma que voce quiser. Nao e recomendado usar numeros no ID da DIV.
+								As DIVs podem usar arquivos .CSS para se encrementar.</div></li>
+						<li>id: Identifica apenas um item.</li>
+						<li>class: Identifica vários itens.</li>
+						<li>
+							<del>< del ></del>
+						</li>
+						<li>
+							<span style="text-decoration: underline";>< span style="text-decoration: underline";></span>
+						</li>
+						<li>
+							Tag de abreviação: <abbr title="Tag de Abreviação">< abbr></abbr> Ao passar o mouse por cima é possível ver o significado.
+						</li>
+						<br>
+						<li>
+							<span style="text-decoration: overline";>< span style="text-decoration: overline";></span>
+						</li>
+						<h2>Tabelas:</h2>
+						<li>table: Criar tabela.</li>
+						<li>< tr> cria linha</li>
+						<li>< td> cria coluna</li>
+						<li>< td"rowspan="2">Celula que ocupa duas linhas</li>
+						<li>< td"colspan="2">Celula que ocupa duas colunas</li>
+						<li>
+							<b>< b></b>
+						</li>
+						<li><i>< i></i>						</li>
+						<br>
+						<h3>Tags de Alinhamento</h3>
+						<li>< spam style="text-align: left/center/right/justify"></li>
+						<li><p style="text-align: justify; text-indent: 50px;">< spam style="text-ident: 50px"></p></li>
+						<li>
+							< pre>: Faz a formatação ficar idêntica ao escrito. Deve ser fechado.
+						</li>
+						<br>
+						<li>
+							& nbsp;: Espaçamento.
+						</li>
+						<br>
+						<h2>CSS:</h2>
+						<li>border-radius: Suaviza a borda de um elemento. Exemplo: border-radius: 4px;.</li>
+						<li>z-index: O item que tiver o maior valor z-index fica pra frente. É usado geralmente em itens com position:absolute</li>
+						<li>top: Coordenada inicial vertical.</li>
+						<li>left: Coordenada inicial horizontal.</li>
+						<li>width: largura do objeto</li>
+						<li>Height: Altura do objeto</li>
+						<li>border: borda</li>
+						<li>padding: Espaço a mais interno</li>
+						<li>margin: Espaço a mais externo</li>
+						<li>Color: Cor da fonte</li>
+						<li></li>
+						<br>
+						<h3>Simbolos</h3>
+						<li>
+							&lt; &nbsp;
+							&gt; &nbsp;
+							&le; &nbsp;
+							&ge; 
+						</li>
+						<li>
+							&pound;; &nbsp;
+							&yen; &nbsp;
+							&euro; 
+						</li>
+						<li>
+							&copy; &nbsp;
+							&reg; &nbsp;
+							&trade;  
+						</li>
+						<li>
+							&permil; &nbsp;
+							&sum; &nbsp;
+							&infin; &nbsp;
+							&times; &nbsp;
+							&oplus; &nbsp;
+							&radic; &nbsp;
+							&ne;  
+						</li>
+						<li>
+							&larr; &nbsp;
+							&rarr; &nbsp;
+							&Rarr; &nbsp;
+							&uarr; &nbsp;
+							&darr; &nbsp;
+							&harr; &nbsp;
+						</li>
+						
+					</ul>
+			</article>
+		</section>
+	<div style="border:3px dotted #9F0">
+		<p>
+			Segunda Div
+		</p>
+	</div>
+	<br>
+	<!-- Link para enviar e-mail -->
+		<a href="mailto:felipegdmito@gmail.com?subject=Ola Felipe" target="_blank"> Enviar E-mail</a>
+	<footer>
+		<p align="center">Teste de direitos reservados &copy;. </p>
+	</footer>
+
+</body>
+</html>
