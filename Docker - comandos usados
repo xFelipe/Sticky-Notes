@@ -87,4 +87,4 @@ ps -ef					#serviços ativos
 ss -s 					#conexões
 ss -a
 ip addr     			#ip conseguido:172.17.0.2
-curl 172.17.0.2:80		#conecta ao ip da o conteiner na porta 80, acessando o apache
+curl 172.17.0.2:80		#conecta ao ip do conteiner na porta 80, acessando o apache
