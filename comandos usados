@@ -1,0 +1,90 @@
+curl -sSL https://get.docker.com | sh
+ps -ef | grep docker  						#verificar se está instalado
+docker ps             						#verificar conteiners executando
+docker stop conteiner_id                    #Fecha conteiner
+docker images 								#verifica as imagens que eu possuo
+docker run -i -t 'ubuntu:14.10' /bin/bash	#inicia um conteiner(ou baixa do repositório) e executa o /bin/bash
+docker attach 49b27d80dfe3					#inicia o conteiner 49b27d80dfe3
+docker diff 49b27d80dfe3					#Exibe arquivos criados, deletados ou modificados do conteiner
+cat /etc/issue                              #Mostra nome do SO
+docker images                               #exibe informações de imagens locais
+docker rmi -f IMAGE_ID                      #remove imagem e seus conteiners
+
+
+Copiar arquivo de host para conteiner:		docker cp nginx-1.12.2.tar.gz b025bb0d8926:/nginx-1.12.2.tar.gz
+
+
+Não tem Kernel, bibliotecas ou binários, pois utiliza os do host.
+
+ctrl p que									#sai do conteiner, mas deixa ele sendo executado
+	
+https://youtu.be/0cDj7citEjE?t=8m35s
+
+DEU RUIM
+
+docker run -i -t debian:jessie /bin/bash    #instala ou inicia o debian jessie
+apt-get update
+apt-get install nginx                       #instala webserver
+ps -ef                                      #nginx ainda não foi iniciado
+/etc/init.d/nginx start                     #inicia nginx
+docker run -i -t -p 8080:80 debian:jessie /bin/bash             #inicia o conteiner debian:jessie, se comunicando pela porta 8080 do host e 80 do conteiner e inicia /bin/bash
+
+docker commit fc82e3bd26d8 badtux/nginx-debian:1.0      #salva imagem em novo arquivo
+
+tail -f /var/log/nginx/access.log                       #Ver logs de acesso
+
+
+docker exec conteiner_id ps -ef                         #executa comando em conteiner a partir de host
+docker exec conteiner_id /etc/init.d/nginx stop
+docker inspect conteiner_id                             #exibe diversas informações sobre conteiner
+
+
+docker run -ti -p 8080:80 badtux/nginx-debian:1.0 /bin/bash
+
+
+
+docker run -it --name web02 --link f67ff202c3a0:web1 badtux/nginx-debian:1.0    #starta conteiner com nome web02 conectado a outro conteiner chamando-o de web1
+
+
+
+########## criação de docker file ########
+FROM debian:jessie
+MAINTAINER felipegdmito@gmail.com
+RUN apt-get update && apt-get install -y apache2 && apt-get clean
+
+
+
+
+apt-get net-tools
+netstat -atup
+ifconfig
+
+
+
+free -m        #encherga a memória disponível
+
+
+##########CONFIGURANDO LIMITAÇÕES###########
+docker run -ti -m 512M debian:jessie /bin/bash          #roda com limitação de memória
+##########limitação de CPU por proporção(1/2 para 1, 1/4 ára cada um dos outros 2)
+docker run --name=doc1 -ti --cpu-shares 1024 debian:jessie /bin/bash    #roda com limitação de CPU
+docker run --name=doc2 -ti --cpu-shares 512 debian:jessie /bin/bash
+docker run --name=doc3 -ti --cpu-shares 512 debian:jessie /bin/bash
+
+docker update --help
+docker update -m 256M container_ID          #atualiza limitação de memória de contêiner em execução
+docker update --cpu-shares 512 contâiner_ID #atualiza limitação de CPU de contêiner em execução
+
+docker inspect 20059dd29373 | grep -i mem               #visualiza memória disponível
+docker inspect 900b6dac1ada | grep -i cpu               #visualiza memória disponível
+
+
+
+docker build -t webserver:1.0 .							#cria imagem webserver de acordo com Dockerfile no diretório atual(.)
+docker run -ti webserver:1.0 /bin/bash
+/etc/init.d/apache2 start
+ps -ef					#serviços ativos
+ss -s 					#conexões
+ss -a
+ip addr     			#ip conseguido:172.17.0.2
+curl 172.17.0.2:80		#conecta ao ip da o conteiner na porta 80, acessando o apache
